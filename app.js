@@ -4,8 +4,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  const pid = process.pid;
-  res.json({ pid });
+  const dockerNode = process.env.HOSTNAME;
+  res.json({ dockerNode });
 });
 
 app.listen(PORT, () => {
