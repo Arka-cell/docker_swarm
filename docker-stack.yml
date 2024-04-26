@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  express-app:
+    image: your-image-name:tag
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "3000:3000"
